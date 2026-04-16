@@ -1,19 +1,23 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
-// Azure için önemli
-const PORT = process.env.PORT || 3000;
+// Azure genellikle 8080 portunu tercih eder
+const PORT = process.env.PORT || 8080;
 
-// Ana sayfa
+// Statik dosyaların (html, css, js) okunmasını sağlar
+app.use(express.static(__dirname));
+
+// Ana sayfa isteği geldiğinde index.html'i gösterir
 app.get("/", (req, res) => {
-  res.send("Azure CI/CD çalışıyor 🚀");
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
-// Basit endpoint
+// Test için API endpoint'i
 app.get("/test", (req, res) => {
-  res.json({ message: "API çalışıyor" });
+  res.json({ status: "success", message: "Azure sunucusu aktif!" });
 });
 
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Sunucu ${PORT} portu üzerinde çalışıyor.`);
 });
