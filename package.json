@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "build": "echo 'No build step needed'",
-    "test": "echo 'No tests yet'"
+    "build": "echo 'Build skip'",
+    "test": "echo 'Test skip'"
   },
   "dependencies": {
     "express": "^4.18.2"
