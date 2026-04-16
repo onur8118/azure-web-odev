@@ -1,12 +1,15 @@
-const express = require('express');
-const path = require('path');
-const app = express();
-const port = process.env.PORT || 8080;
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.listen(port, () => {
-  console.log(`Sunucu ${port} üzerinde çalışıyor.`);
-});
+{
+  "name": "azure-web-odev",
+  "version": "1.0.0",
+  "description": "Azure App Service CI/CD Odevi",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "author": "Onur",
+  "license": "ISC"
+}
